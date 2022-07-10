@@ -1,5 +1,7 @@
 import { FC } from 'react';
 
+const LANGAGES: string[] = ['JavaScript', 'C++', 'Ruby', 'Java', 'PHP', 'Go'];
+
 type Props = {
   title: string;
 };
@@ -7,7 +9,11 @@ type Props = {
 const List: FC<Props> = ({ title }) => (
   <div>
     <h4>{title}</h4>
-    <div>リストです</div>
+    <div>
+      {LANGAGES.map((lang) => (
+        <div>{lang}</div>
+      ))}
+    </div>
   </div>
 );
 
