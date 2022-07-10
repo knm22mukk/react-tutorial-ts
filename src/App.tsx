@@ -1,11 +1,21 @@
-import { FC, useState } from 'react';
-import { LANGUAGES } from './const/Languages';
+import { FC, useEffect, useState } from 'react';
+import { getLanguages } from './const/Languages';
 import Form from './Form';
 import List from './List';
 
 const App: FC = () => {
   const [tab, setTab] = useState('list');
-  const [langs, setLangs] = useState<string[]>(LANGUAGES);
+  const [langs, setLangs] = useState<string[]>([]);
+
+  const fetchLanguages = async () => {
+    const languages = await getLanguages();
+    setLangs(languages);
+  };
+
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    fetchLanguages();
+  }, []);
 
   const addlang = (lang: string) => {
     setLangs([...langs, lang]);
