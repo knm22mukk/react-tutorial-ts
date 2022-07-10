@@ -5,12 +5,12 @@ type Props = {
 };
 
 const List: FC<Props> = ({ langs }) => (
-  <div>
-    <div>
-      {langs.map((lang) => (
-        <div key={lang}>{lang}</div>
-      ))}
-    </div>
+  <div className='pt-6 px-16'>
+    {langs.map((lang) => (
+      <div className='py-3 px-8 first:border-none border-t border-gray-400' key={lang}>
+        {lang}
+      </div>
+    ))}
   </div>
 );
 

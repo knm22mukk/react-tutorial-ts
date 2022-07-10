@@ -25,17 +25,28 @@ const App: FC = () => {
 
   return (
     <div>
-      <header>
-        <ul>
-          <li aria-hidden='true' onClick={() => setTab('list')}>
+      <header className='flex justify-between pt-6 px-16 border-b'>
+        <ul className='flex'>
+          <li
+            className={`px-2 py-3 cursor-pointer ${
+              tab === 'list' ? 'border-b-2 border-b-[#F44336]' : ''
+            }`}
+            aria-hidden='true'
+            onClick={() => setTab('list')}
+          >
             リスト
           </li>
-          <li aria-hidden='true' onClick={() => setTab('form')}>
+          <li
+            className={`px-2 py-3 cursor-pointer ${
+              tab === 'form' ? 'border-b-2 border-b-[#F44336]' : ''
+            }`}
+            aria-hidden='true'
+            onClick={() => setTab('form')}
+          >
             フォーム
           </li>
         </ul>
       </header>
-      <hr />
       {tab === 'list' ? <List langs={langs} /> : <Form onAddLang={addlang} />}
     </div>
   );

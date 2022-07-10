@@ -13,3 +13,7 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+.button {
+  @apply border-none rounded-md bg-[#2196F3] py-2 px-4 min-w-[100px] text-lg font-bold text-white cursor-pointer;
+}
