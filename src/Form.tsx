@@ -1,11 +1,15 @@
 import { FC, useState } from 'react';
 
-const Form: FC = () => {
+type Props = {
+  onAddLang: (text: string) => void;
+};
+
+const Form: FC<Props> = ({ onAddLang }) => {
   const [text, setText] = useState<string>('');
 
   const submitForm = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(text);
+    onAddLang(text);
   };
   return (
     <div>

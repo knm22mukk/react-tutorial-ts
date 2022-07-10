@@ -24,8 +24,10 @@ module.exports = {
   plugins: ['react', '@typescript-eslint'],
   ignorePatterns: ['.eslintrc.js'],
   rules: {
+    '@typescript-eslint/no-unsafe-call': 'off',
     'no-console': 'off',
     'no-use-before-define': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
     'import/prefer-default-export': 'off',
     'import/extensions': [
@@ -44,12 +46,6 @@ module.exports = {
       },
     ],
     'react/react-in-jsx-scope': 'off',
-    'no-void': [
-      'error',
-      {
-        allowAsStatement: true,
-      },
-    ],
     'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
   },
   settings: {
