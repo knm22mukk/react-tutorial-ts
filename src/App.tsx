@@ -2,6 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import { getLanguages } from './const/Languages';
 import Form from './Form';
 import List from './List';
+import './App.css';
 
 const App: FC = () => {
   const [tab, setTab] = useState('list');
